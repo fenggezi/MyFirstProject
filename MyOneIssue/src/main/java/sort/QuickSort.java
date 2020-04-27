@@ -1,19 +1,36 @@
 package sort;
 
 public class QuickSort {
+    public void quickSort(int [] arr,int start ,int end){
+        int i =start;
+        int j =end;
+        int middle = 0;
 
-    public int[] bubboSort1(int[] arr ){
-        //冒泡排序就是将响铃的位置的数如果排序不真确就互换
-        int length = arr.length;
-        for(int i =0 ;i<arr.length-1;i++ ){// 对当前的组
-            for(int j = 0 ;j<arr.length-1-i;j++){// 这里  j-i-1 是对当前 已近排过顺序的前 i 位 不必再排序
-                if(arr[j]>arr[j+1]){
-                    int tmp =arr[j];
-                    arr[j] = arr[j+1];
-                    arr[j+1] = tmp;
+        if(end -start>0){
+            while(i<j){
+                while(i<j &&arr[j]<=arr[i]){
+                    j--;
+                }
+                if(i<j){
+                    int tmp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = tmp;
+                }
+                while(i<j &&arr[i]>=arr[j]){
+                    i--;
+                }
+                if(i<j){
+                    int tmp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = tmp;
                 }
             }
+            middle =i; // 相遇  ij
+
+            quickSort(arr,0,middle-1);
+            quickSort(arr,middle+1,end);
+        }else if(end -start<=0){
+            return ;//出口
         }
-        return arr;
     }
 }
