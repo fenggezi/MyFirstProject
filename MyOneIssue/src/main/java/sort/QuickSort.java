@@ -2,9 +2,9 @@ package sort;
 
 public class QuickSort {
     public void quickSort(int [] arr,int start ,int end){
-        int i =start;
-        int j =end;
-        int middle = 0;
+        int i =start;//
+        int j =end;//
+        int middle = 0;//
 
         if(end -start>0){
             while(i<j){
