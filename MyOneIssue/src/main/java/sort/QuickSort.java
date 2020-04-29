@@ -17,7 +17,7 @@ public class QuickSort {
                     arr[i] = tmp;
                 }
                 while(i<j &&arr[i]>=arr[j]){
-                    i--;
+                    i++;
                 }
                 if(i<j){
                     int tmp = arr[j];
